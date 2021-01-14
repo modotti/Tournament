@@ -1,0 +1,102 @@
+@import 'src/base';
+
+.head {
+    min-height: 80px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+.head-title {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 36px;
+    font-weight: 200;
+    color: $highlight-title-color;
+    margin-right: 16px;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.head-buttons {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.round-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: $highlight-text-color;
+    background-color: $background-color-light;
+    line-height: 24px;
+    padding: 4px;
+    padding-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    border-radius: 4px
+}
+
+.modal-body {
+    font-weight: 300;
+}
+
+@media (min-width: 576px)
+{
+    .head {
+        min-height: 40px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .head-buttons {
+        float: right !important;
+    }
+}
+
+.champion-container {
+    text-align: center;
+    width: 100%;
+    margin: 64px;
+}
+
+.trophy {
+    background-color: $background-color-light;
+    border-radius: 50%;
+    border: 0;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
+    margin-left: calc(50% - 80px);
+    color: $winner-color;
+    font-size: 92px;
+
+    fa-icon {
+        position: relative;
+        top: 4px;   
+    }
+}
+
+.champion {
+    border: 1px solid $base-color;
+    color: $base-color;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.champion-gold {
+    border-color: $winner-color !important;
+}
+
+.champion-inner {
+    font-size: 14px;
+    background-color: $background-color-light;
+    margin: 1px;
+    padding: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+}

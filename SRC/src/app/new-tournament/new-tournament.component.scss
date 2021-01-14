@@ -1,0 +1,25 @@
+@import 'src/base';
+
+.form-control {
+    font-weight: 300 !important;
+}
+
+.team-input {
+    width: calc(50% - 8px);
+    margin-bottom: 8px;
+    margin-right: 8px;
+    float: left;
+}
+
+.form-text {
+    font-size: 12px;
+}
+
+.filled {
+    border-color: #007bff;
+    background-color: #ebf2f9;
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+    color: #ccc;
+}

@@ -1,0 +1,42 @@
+<ng-template #newTournamentModal let-newTournamentModal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Tournament</h4>
+        <button type="button" class="close" aria-label="Close" (click)="newTournamentModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <form #form="ngForm">
+            <div class="mb-3">
+                <label for="name" class="col-form-label">Name:</label>
+                <input 
+                    ngbAutofocus 
+                    type="text" 
+                    class="form-control {{getFilledClassName(tournament.name)}}" 
+                    [(ngModel)]="tournament.name" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Insert name of tournament">
+            </div>
+
+            <div class="mb-3">
+                <label for="team1" class="col-form-label">Teams:</label>
+                <div class="form-text mb-2">Include 2 to 16 teams</div>
+
+                <input 
+                    *ngFor="let team of [].constructor(16); let i = index;"
+                    type="text" 
+                    class="form-control team-input {{getFilledClassName(tournament.teams[i])}}" 
+                    [(ngModel)]="tournament.teams[i]" 
+                    [ngModelOptions]="{standalone: true}"
+                    placeholder="Team {{i+1}}">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="clear()">Clear</button>        
+        <button type="button" class="btn btn-outline-primary" (click)="randomize()">Randomize</button>        
+        <button type="button" class="btn btn-primary" (click)="submitTournament()">Complete</button>        
+    </div>
+</ng-template>

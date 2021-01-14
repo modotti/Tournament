@@ -1,0 +1,45 @@
+@import 'src/base';
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $background-color;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.container {
+    min-width: 264px;
+}
+
+.btn {
+    font-size: 0.8em;
+}
+
+.btn-primary {
+    background-color: $button-color;
+    border-color: $button-color;
+}
+
+.btn-outline-primary {
+    border-color: $button-color;
+    color: $button-color;
+}
+
+.btn-primary:hover, 
+.btn-primary.active {
+    background-color: $button-color-hover;
+    border-color: $button-color-hover;
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-primary.active {
+    background-color: $button-color-hover;
+    border-color: $button-color-hover;
+}

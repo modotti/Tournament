@@ -1,0 +1,41 @@
+<div class="duel {{round}} {{getHasWinnerClass()}} {{getDisabledClass()}}">
+    <div class="duel-inner" (click)="openWinnerSelection()">
+        <div class="team {{getWinnerClass(1)}}">
+            {{duel.team1 || '&nbsp;'}}
+            <fa-icon *ngIf="duel.winner == 1" class="crown" [icon]="faCrown"></fa-icon>
+        </div>
+        <hr class="divisor m-0" />
+        <div class="team {{getWinnerClass(2)}}">
+            {{duel.team2 || '&nbsp;'}}
+            <fa-icon *ngIf="duel.winner == 2" class="crown" [icon]="faCrown"></fa-icon>
+        </div>
+    </div>
+</div>
+
+<ng-template #winnerModal let-winnerModal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Who wins?</h4>
+        <button type="button" class="close" aria-label="Close" (click)="winnerModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #form="ngForm">
+            <div class="form-check">
+                <input [(ngModel)]="winner" class="form-check-input" type="radio" name="winnerTeam" id="winnerTeam1" value="1">
+                <label class="form-check-label" for="winnerTeam1">
+                    {{duel.team1 || '&nbsp;'}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input [(ngModel)]="winner" class="form-check-input" type="radio" name="winnerTeam" id="winnerTeam2" value="2">
+                <label class="form-check-label" for="winnerTeam2">
+                    {{duel.team2 || '&nbsp;'}}
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" ngbAutofocus class="btn btn-primary" (click)="setWinner()">Set Winner</button>
+    </div>
+</ng-template>
